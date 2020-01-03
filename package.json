@@ -1,0 +1,26 @@
+{
+  "name": "21nov",
+  "version": "1.0.0",
+  "description": "Simple data serving server deployed at heroku",
+  "main": "index.js",
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12",
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "cross-env ENV=prod pm2 start server21",
+    "test": "jest",
+    "watch": "nodemon server21",
+    "gitadd": "git add .",
+    "gitcommit": "git commit -m 'deploytoheroku'",
+    "gitpush": "git push",
+    "deployprod": "npm run gitadd && npm run gitcommit && npm run gitpush",
+    "devdeploy": "cross-env ENV=devl nodemon server21"
+  },
+  "author": "Ujjwal Srivastava",
+  "license": "ISC"
+}

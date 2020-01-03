@@ -1,0 +1,8 @@
+const express=require('express')
+const app=express()
+const kallu=require('./routes/21routes')
+const middleware=require('./middleware/logger')
+const conf=require('./config')
+app.use(middleware.logger)
+app.use('/route1',kallu)
+app.listen(conf.PORT,()=>console.log("server started"))
